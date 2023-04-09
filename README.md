@@ -1,4 +1,4 @@
-# Brefify
+
 # Briefify
 
 Briefify is a web application that gives summary of any meeting provided. It uses Machine Learning models to generate a summary of the meeting along with some extra features.
