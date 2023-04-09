@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>summary display</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/translate.css'%}">
+</head>
+
+<body>
+    <div class="upper_banner">
+        <div class="banleft"><a style="background: none;"> Translator </a></div>
+        <a href="/dashboard/">
+            <div class="ban_right" style="margin-left: 345px;"> <img src="{% static 'img/back.png' %}"> </div>
+        </a>
+
+
+    </div>
+
+    <div class="lower_body">
+        <h1> {{title}} </h1>
+
+        <div class="paragraph" style="margin-left: 230px;">
+
+            <div class="para_in">
+                <div class="og"> Original </div>
+                <div class="tr"> Translated </div>
+
+                <div class="para_in_l">
+                    {{summary_text}}
+                </div>
+                <div class="para_seperator"></div>
+                <div class="para_in_r">
+                    {{out}}
+                </div>
+
+
+
+            </div>
+        </div>
+        <!-- <div class="line"></div> -->
+    </div>
+
+
+
+    <!-- <div class="action_points"> <a href=""> Action points </a> </div> -->
+
+
+
+
+
+
+</body>
+
+</html>

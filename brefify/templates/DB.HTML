@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- <link rel="stylesheet" href="dashboard.css" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+</head>
+
+<body>
+    <div class="main">
+        <div class="main_left">
+            <div class="hierarchy">
+                <div class="title"><a href="main.html">DeepBlue</a></div>
+                <div class="line"></div>
+                <div class="elements">
+                    <div class="box">
+                        <div class="but ab" id="but1">
+                            <div class="check">
+                                <img src="{% static 'img/dashboard.png' %}" id="img1" />
+                            </div>
+                            <div class="word">
+                                <a href="javascript:void(0)" id="txt1" onclick="click1()">
+                    Dashboard
+                  </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="but cd" id="but2">
+                            <div class="check"><img src="{% static 'img/summary.png' %}" id="img2" /></div>
+                            <div class="word">
+                                <a href="javascript:void(0)" id="txt2" onclick="click2()">Summary</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="box">
+              <div class="but ef" id="but3">
+                <div class="check"><img src="{% static 'img/storage.png' %}" id="img3" /></div>
+                <div class="word">
+                  <a href="javascript:void(0)" id="txt3" onclick="click3()"
+                    >Storage</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="box">
+              <div class="but gh" id="but4">
+                <div class="check"><img src="{% static 'img/user.png' %}" id="img4" /></div>
+                <div class="word">
+                  <a href="javascript:void(0)" id="txt4" onclick="click4()"
+                    >Account</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="box">
+              <div class="but ij" id="but5">
+                <div class="check"><img src="{% static 'img/log-out.png' %}" id="img5" /></div>
+                <div class="word">
+                  <a href="javascript:void(0)" id="txt5" onclick="click5()"
+                    >Log Out</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main_right">
+        <div class="banner">
+          <div class="banleft first" id="first"><a> Welcome, Aakash.</a></div>
+                            <div class="banleft second" id="second"><a> Summary</a></div>
+                            <div class="banleft third" id="third"><a> Storage</a></div>
+                            <div class="banleft fourth" id="fourth"><a> Account</a></div>
+                            <div class="banleft fifth" id="fifth"><a> Logging out...</a></div>
+                            <div class="profile">
+                                <a href="javascript:void(0)" onclick="click4()">
+                                    <img src="{% static 'img/profile pic.png' %}" />
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="content1" id="content1">
+                            <div class="uppercontent">
+                                <h1>Recent summary's</h1>
+                                <div class="container_top">
+                                    <a href="javascript:void(0)">
+                                        <div class="card">
+                                            <div class="card_upper"></div>
+                                            <div class="card_lower">
+                                                <div class="heading">Metaverse</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="javascript:void(0)">
+                                        <div class="card">
+                                            <div class="card_upper"></div>
+                                            <div class="card_lower">
+                                                <div class="heading">String Theory</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="javascript:void(0)">
+                                        <div class="card">
+                                            <div class="card_upper"></div>
+                                            <div class="card_lower">
+                                                <div class="heading">Neutron star</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="javascript:void(0)">
+                                        <div class="card">
+                                            <div class="card_upper"></div>
+                                            <div class="card_lower">
+                                                <div class="heading">Black Holes</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="lowercontent">
+                                <h1>Recent Upload's</h1>
+                                <div class="container_bottom">
+                                    <div class="list">
+                                        <a href="javascript:void(0)">
+                                            <div class="list_item">
+                                                <div class="no">1.</div>
+                                                <div class="file">Metaverse</div>
+                                                <div class="date">January 1</div>
+                                            </div>
+                                        </a>
+                                        <a href="javascript:void(0)">
+                                            <div class="list_item">
+                                                <div class="no">2.</div>
+                                                <div class="file">String Theory</div>
+                                                <div class="date">January 4</div>
+                                            </div>
+                                        </a>
+                                        <a href="javascript:void(0)">
+                                            <div class="list_item">
+                                                <div class="no">3.</div>
+                                                <div class="file">Neutron star</div>
+                                                <div class="date">January 8</div>
+                                            </div>
+                                        </a>
+                                        <a href="javascript:void(0)">
+                                            <div class="list_item">
+                                                <div class="no">4.</div>
+                                                <div class="file">Black Holes</div>
+                                                <div class="date">January 15</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="javascript:void(0)">
+                                <div class="add1"><img src="{% static 'img/plus.png' %}" /></div>
+                            </a>
+                        </div>
+
+                        <div class="content2" id="content2">
+                            <h1>Summary</h1>
+                            <div class="content2_container">
+                                <a href="javascript:void(0)">
+                                    <div class="card">
+                                        <div class="card_upper"></div>
+                                        <div class="card_lower">
+                                            <div class="heading">Metaverse</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="javascript:void(0)">
+                                    <div class="card">
+                                        <div class="card_upper"></div>
+                                        <div class="card_lower">
+                                            <div class="heading">String Theory</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="javascript:void(0)">
+                                    <div class="card">
+                                        <div class="card_upper"></div>
+                                        <div class="card_lower">
+                                            <div class="heading">Neutron star</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="javascript:void(0)">
+                                    <div class="card">
+                                        <div class="card_upper"></div>
+                                        <div class="card_lower">
+                                            <div class="heading">Black Holes</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="javascript:void(0)">
+                                    <div class="card">
+                                        <div class="card_upper"></div>
+                                        <div class="card_lower">
+                                            <div class="heading">Quantum Loop</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <a href="javascript:void(0)">
+                                <div class="add2"><img src="{% static 'img/plus.png' %}" /></div>
+                            </a>
+                        </div>
+
+                        <div class="content3" id="content3">
+                            <h1>Storage</h1>
+
+                            <div class="content3_container">
+                                <a href="javascript:void(0)">
+                                    <div class="list_item">
+                                        <div class="no">1.</div>
+                                        <div class="file">Metaverse</div>
+                                        <div class="date">January 1</div>
+                                    </div>
+                                </a>
+                                <a href="javascript:void(0)">
+                                    <div class="list_item">
+                                        <div class="no">2.</div>
+                                        <div class="file">String Theory</div>
+                                        <div class="date">January 4</div>
+                                    </div>
+                                </a>
+                                <a href="javascript:void(0)">
+                                    <div class="list_item">
+                                        <div class="no">3.</div>
+                                        <div class="file">Neutron star</div>
+                                        <div class="date">January 8</div>
+                                    </div>
+                                </a>
+                                <a href="javascript:void(0)">
+                                    <div class="list_item">
+                                        <div class="no">4.</div>
+                                        <div class="file">Black Holes</div>
+                                        <div class="date">January 15</div>
+                                    </div>
+                                </a>
+                                <a href="javascript:void(0)">
+                                    <div class="list_item">
+                                        <div class="no">5.</div>
+                                        <div class="file">Quantum Loop</div>
+                                        <div class="date">January 25</div>
+                                    </div>
+                                </a>
+                            </div>
+                            <a href="javascript:void(0)">
+                                <div class="add2"><img src="{% static 'img/plus.png' %}" /></div>
+                            </a>
+                        </div>
+
+                        <div class="content4" id="content4">
+                            <h1>Details</h1>
+                            <a href="javascript:void(0)">
+                                <div class="content4_profile">
+                                    <img src="{% static 'img/user.png' %}" />
+                                </div>
+                            </a>
+                            <div class="seperate"></div>
+                            <div class="content4_container">
+                                <div class="field">
+                                    <div class="field_l"> Name: </div>
+                                    <div class="field_r"> Aakash Singh </div>
+                                </div>
+                                <div class="field">
+                                    <div class="field_l"> Email: </div>
+                                    <div class="field_r"> akashsingh20603@gmail.com </div>
+                                </div>
+                                <div class="field">
+                                    <div class="field_l"> Username: </div>
+                                    <div class="field_r"> Aakashsingh_69 </div>
+                                </div>
+                                <div class="field">
+                                    <div class="field_l"> Password: </div>
+                                    <div class="field_r"> ******** </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content5" id="content5"></div>
+                    </div>
+                </div>
+
+                <script src="{% static 'js/dashboard.js' %}"></script>
+</body>
+
+</html>

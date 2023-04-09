@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>summary display</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/display.css'%}">
+</head>
+
+<body>
+    {% load static %}
+    <div class="upper_banner">
+        <div class="banleft"><a style="background: none;"> Summary </a></div>
+        <a href="/dashboard/">
+            <div class="ban_right" style="margin-left: 345px;"> <img src="{%static 'img/back.png' %}"> </div>
+        </a>
+
+
+    </div>
+    {% load static %}
+    <div class="lower_body">
+        <h1> {{summary.title}} </h1>
+
+        <div class="paragraph">
+
+            <div class="para_in">
+                {{summary.summary_text}}
+            </div>
+        </div>
+        <div class="line"></div>
+    </div>
+    <div class="translator"><a href="/translatee/{{summary.id}}/"> Translate </a></div>
+    <div class="details">
+        <h2>Meeting Duration: {{summary.duration}}</h2>
+        <h2>Original length: {{summary.transcript_words}} words</h2>
+        <h2>Summary Length: {{summary.summary_words}} words</h2>
+        <h2>Created on: {{ summary.generated_date|date:"F j, Y" }}</h2>
+
+    </div>
+    <div class="action_points"> <a href="/actionpoints/{{summary.id}}/"> Action points </a> </div>
+
+
+
+
+
+
+
+</body>
+
+</html>

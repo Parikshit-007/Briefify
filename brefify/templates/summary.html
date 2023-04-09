@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>summary display</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/display.css' %}">
+</head>
+{% load static %}
+
+<body>
+    <div class="upper_banner">
+        <div class="banleft"><a style="background: none;"> Summary </a></div>
+        <a href="/dashboard/">
+            <div class="ban_right" style="margin-left: 345px;"> <img src="{% static 'img/back.png' %}"> </div>
+        </a>
+
+
+    </div>
+
+    <div class="lower_body">
+        <h1> {{video.title}} </h1>
+
+        <div class="paragraph">
+
+            <div class="para_in">
+                {{summary}}
+            </div>
+        </div>
+        <div class="line"></div>
+    </div>
+
+    <div class="details">
+        <h2>Meeting Duration: {{duration}}</h2>
+        <h2>Original length: {{transcript_words}} words</h2>
+        <h2>Summary Length: {{summary_words}} words</h2>
+        <h2>Created on: {{ video.upload_date|date:"F j, Y" }}</h2>
+
+
+
+
+    </div>
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,294 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel=”stylesheet” href=”css/bootstrap.css”> <link rel=”stylesheet”
+    href=”css/bootstrap-responsive.css”> -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700;900&display=swap" rel="stylesheet" />
+
+    <!-- <link rel="stylesheet" href="main.css" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <title>Home</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+
+<body>
+    <div class="home" id="home"></div>
+    <nav class="nav">
+        <div class="logo"><a href="#home">DeepBlue</a></div>
+        <div class="content">
+            <div class="items item1"><a href="/webapp/"> Home </a></div>
+            <div class="items item2"><a href="javascript:void(0)"> About Us </a></div>
+            <div class="items item3"><a href="/dashboard/"> Services </a></div>
+        </div>
+
+
+
+        <div class="test" id="test" onclick="display()">
+            <img src="{% static 'img/chat.png' %}" style="height: 50px;">
+          </div>
+      
+          <div class="chat-bar-collapsible" id="test2">
+            <button id="chat-button"  class="collapsible">Chat with us!
+               
+                <!-- <a id="close" onclick="close()"> <img src="img/close.png" style="height: 20px;"> </a> -->
+                <div class="close" id="close" onclick="band()">  <img src="{% static 'img/close.png' %}" style="height: 20px;"> </div>
+      
+            </button>
+      
+            <div class="content1">
+                <div class="full-chat-block">
+                    <!-- Message Container -->
+                    <div class="outer-container">
+                        <div class="chat-container">
+                            <!-- Messages -->
+                            <div id="chatbox">
+                                <h5 id="chat-timestamp"></h5>
+                                <p id="botStarterMessage" class="botText"><span>Loading...</span></p>
+                            </div>
+      
+                            <!-- User input box -->
+                            <div class="chat-bar-input-block">
+                                <div id="userInput">
+                                    <input id="textInput" class="input-box" type="text" name="msg"
+                                        placeholder="Tap 'Enter' to send a message">
+                                    <p></p>
+                                </div>
+      
+                                <div class="chat-bar-icons">
+                                    <!-- <i id="chat-icon" style="color: crimson;" class="fa fa-fw fa-heart"
+                                        onclick="heartButton()"></i> -->
+                                    <i id="chat-icon" style="color: #333;" class="fa fa-fw fa-send"
+                                        onclick="sendButton()"></i>
+                                </div>
+                            </div>
+      
+                            <div id="chat-bar-bottom">
+                                <p></p>
+                            </div>
+      
+                        </div>
+                    </div>
+      
+                </div>
+            </div>
+      
+        </div>
+
+
+
+
+
+
+        <div class="cred">
+            <!-- <div class="ls login"><a href="log.html"> Log in </a></div>
+        <div class="ls signin" id="signup" onclick="signupf()"><a href="sign.html"> Sign up </a></div> -->
+            <div class="profile">
+                <div class="dummy">
+                    {% if request.session.user %}
+                    <div class="log"><a href="{% url 'logout' %}">Logout</a></div>
+                    <a href="/login/"><img src="{% static 'img/profile.png' %}"></a>{%else%}
+                    <div class="log"><a>log in</a></div>
+                    <div class="sign"><a>sign in</a></div>
+                    <a href="/login/"><img src="{% static 'img/profile.png' %}"></a>
+                    {%endif%}
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="svg">
+        <svg height="700" width="100%">
+      <ellipse cx="740" cy="10" rx="650" ry="700" style="fill: rgb(31, 31, 46)" />
+    </svg>
+    </div>
+
+    <div class="main">
+        <div class="head">
+            <div class="h1">Turn your conversations into actionable insights</div>
+            <div class="h2">
+                Do you spend 5+ hours a week in meetings & it's hard to remember key points? No worries, Deep Blue helps you summarize your calls & get key insights.
+            </div>
+            <div class="try"><a href="/dashboard/">Try Now </a></div>
+        </div>
+    </div>
+
+    <div class="image">
+        <div class="l"><img src="{% static 'img/laptop.png' %}" alt="mac" /></div>
+    </div>
+
+    <div class="why">
+        <a> Why Deep Blue? </a>
+    </div>
+
+    <div class="butdiv">
+        <div class="but">
+            <a href="javascript:void(0)">
+                <div class="button1" id="but1" onclick="click2()">Deep Blue</div>
+            </a>
+            <div class="line"></div>
+            <a href="javascript:void(0)">
+                <div class="button2" id="but2" onclick="click1()">Other Tools</div>
+            </a>
+        </div>
+    </div>
+
+    <div class="live">
+        <div class="area" id="area1">
+            <div class="left">
+                <a>
+          Deep Blue summarizes meetings into key takeaways and an intelligence
+          dashboard
+        </a>
+            </div>
+            <div class="right">
+                <div class="box1">
+                    <div class="check"><img src="{% static 'img/tick.png' %}"></div>
+                    <div class="word">10x shorter</div>
+                </div>
+                <div class="box2">
+                    <div class="check"><img src="{% static 'img/tick.png' %}" style="margin-left: -5px;"></div>
+                    <div class="word" style="margin-left: -10px;">1 minute to read</div>
+                </div>
+                <div class="box3">
+                    <div class="check"><img src="{% static 'img/tick.png' %}"></div>
+                    <div class="word"> Actionable </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="area2" id="area2">
+            <div class="left2">
+                <a>
+          Get buried in lengthy transcriptions to find what was important to
+          you & your work
+        </a>
+            </div>
+            <div class="right2">
+                <div class="box1">
+                    <div class="check"><img src="{% static 'img/tick.png' %}"></div>
+                    <div class="word">5000+ words</div>
+                </div>
+                <div class="box2">
+                    <div class="check"><img src="{% static 'img/tick.png' %}"></div>
+                    <div class="word">10-15 minutes</div>
+                </div>
+                <div class="box3">
+                    <div class="check"><img src="{% static 'img/tick.png' %}"></div>
+                    <div class="word">Length</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="compatible">
+        <div class="cup"><a> Deep Blue is open for Expansion !</a></div>
+        <div class="cdown">
+            <div class="section1">
+                <div class="upper"></div>
+                <div class="lower"><img src="{% static 'img/empty.png' %}"><a>Coming Soon</a></div>
+            </div>
+            <div class="section1">
+                <div class="upper">Microsoft Teams</div>
+                <div class="lower"><img src="{% static 'img/teams1.png' %}"></div>
+            </div>
+            <div class="section1">
+                <div class="upper"></div>
+                <div class="lower"><img src="{% static 'img/empty.png' %}"><a>Coming Soon</a></div>
+            </div>
+        </div>
+        <div class="learn"> <a href="javascript:void(0)"> Wanna Learn more ? </a> </div>
+    </div>
+
+    <div class="info">
+
+        <div class="infoleft"><img src="{% static 'img/1.png' %}" height="340px" style="padding: 0px 0px 0px 150px;"></div>
+        <div class="inforight">
+            <div class="rightupper"><a>Keep track of what's important</a></div>
+            <div class="rightlower"><a>Not just audio to text, summary from Instaminutes lets you think, plan, & act on
+          important part of conversations so that you can work on the tasks that matter most to you without wasting time
+          on lengthy transcript.</a></div>
+        </div>
+    </div>
+
+    <div class="info">
+
+
+        <div class="inforight">
+            <div class="drightupper"><a>Intelligence for your conversation</a></div>
+            <div class="drightlower"><a>We transform the whole meeting into a meeting intelligence dashboard so that you can
+          find key topics discussed during the meeting, key questions asked, who spoke and how much, within seconds.</a>
+            </div>
+        </div>
+        <div class="infoleft"><img src="{% static 'img/2.png' %}" height="340px" style="padding: 0px 0px 0px 40px;"></div>
+
+    </div>
+
+    <div class="info">
+
+        <div class="infoleft"> <img src="{% static 'img/3.png' %}" height="340px" style="padding: 0px 0px 0px 150px;"></div>
+        <div class="inforight">
+            <div class="rightupper"><a style="width: 500px;">Turn meetings into an easy workflow</a></div>
+            <div class="rightlower"><a>Share key takeaways, like QnA, tasks, features requests from users with your team via
+          Slack, email or 50+ integrations in just few clicks.</a></div>
+        </div>
+    </div>
+
+    <div class="end">
+
+        <div class="endtitle">Summary of every moment in 1 click,</div>
+        <div class="endsubtext">
+            Extract insights from any conversation.
+        </div>
+        <div class="tryend"><a href="/dashboard/"> Try Now </a></div>
+    </div>
+
+    </div>
+
+    <div class="footer">
+        <div class="logoend">Deep Blue</div>
+        <ul>
+            <!-- <li>
+        <a href="javascript:void(0)"> Home</a>
+      </li> -->
+            <li>
+                <a href="javascript:void(0)">Help </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)">Support </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)"> Feedback</a>
+            </li>
+            <li>
+                <a href="javascript:void(0)"> Dev's </a>
+            </li>
+        </ul>
+
+        <div class="socials">
+            <div class="facebook">
+                <a href="#" class="fa fa-facebook"></a>
+            </div>
+            <div class="twitter">
+                <a href="#" class="fa fa-twitter"></a>
+            </div>
+            <div class="instagram">
+                <a href="#" class="fa fa-instagram"></a>
+            </div>
+            <div class="google">
+                <a href="#" class="fa fa-google"></a>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/home.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="{% static 'js/responses.js' %}"></script>
+    <script src="{% static 'js/chat.js' %}"></script>
+    <script src="{% static 'js/chatindex.js' %}"></script>
+</body>
+
+</html>

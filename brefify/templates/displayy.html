@@ -1,0 +1,20 @@
+<h1>
+    {{ excel_file.file.name }}</h1>
+<table>
+    <thead>
+        <tr>
+            {% for col in df.columns %}
+            <th>{{ col }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in df.values %}
+        <tr>
+            {% for val in row %}
+            <td>{{ val }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <!-- <link rel="stylesheet" type="text/css" href="log.css"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+    <title>Form</title>
+    {% load static%}
+    <link rel="stylesheet" href="{% static 'css/log.css' %}">
+
+</head>
+
+<body>
+    <div class="main">
+        <input type="checkbox" id="chk" aria-hidden="true">
+
+        <div class="signup">
+            <form action="/signup/" method="post">
+                {% csrf_token %} {% if error%}
+                <h9 class="alert alert-danger" style="color: white;" role="alert">
+                    {{error}}
+                </h9>
+                {% endif %}
+                <label for="chk" aria-hidden="true">Sign up</label>
+                <input type="text" name="firstname" placeholder="first name" id="" value="{{values.first_name}}">
+                <input type="text" name="username" placeholder="User name" id="" value="{{values.username}}">
+                <input type="email" name="email" placeholder="Email" id="" value="{{values.email}}">
+                <input type="password" name="password" placeholder="Password" id="">
+                <button type="submit">Sign up</button>
+                <label for="chk" aria-hidden="true" style="font-size: 18px; margin-top:50px">Already have an account?</label>
+            </form>
+        </div>
+
+        <div class="login" id="loginbox">
+            <form action="/login/" method="post">
+                {% csrf_token %} {% if error %}
+                <div class="alert alert-danger">{{ error }}</div>
+                {% endif %}
+                <label for="chk" aria-hidden="true">Login</label>
+                <input type="email" name="email" placeholder="Email" id="" value={{values.email}}>
+                <input type="password" name="password" placeholder="Password" id="">
+
+                <input type="hidden" name="next" value="{{ next }}">
+                <button type="submit">Login</button>
+                <label for="chk" aria-hidden="true" style="font-size: 18px; margin-top:50px">Don't have an account yet?</label>
+
+            </form>
+        </div>
+    </div>
+    <!-- <img src="img/wave.svg"> -->
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>

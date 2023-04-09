@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>summary display</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/display.css'%}">
+</head>
+
+<body>
+    {% load static %}
+    <div class="upper_banner">
+        <div class="banleft"><a style="background: none;"> Action Points </a></div>
+        <a href="/dashboard/">
+            <div class="ban_right" style="margin-left: 345px;"> <img src="{%static 'img/back.png' %}"> </div>
+        </a>
+
+
+    </div>
+    {% load static %}
+    <div class="lower_body">
+        <h1> {{video.title}} </h1>
+
+        <div class="paragraph" style="margin-left:230px;">
+
+            <div class="para_in">
+                {% for sentence in highlighted_sentences %}
+                <li style="background-color: #ffffff;"> {{ sentence }} </li>
+                {% endfor %}
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+</body>
+
+</html>

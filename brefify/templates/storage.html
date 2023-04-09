@@ -1,0 +1,33 @@
+<style>
+    .video-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-gap: 20px;
+    }
+    
+    .video-box {
+        border: 1px solid #ccc;
+        padding: 10px;
+        box-shadow: 2px 2px 5px #ccc;
+    }
+    
+    .video-box h3 {
+        margin: 0;
+    }
+    
+    .video-box video {
+        width: 100%;
+    }
+</style>
+
+<div class="video-grid">
+    {% for video in videos %}
+    <div class="video-box">
+        <h3>{{ video.title }}</h3>
+        <video src="{{ video.video_file.url }}" controls></video>
+        <a href="{% url 'summary' video_id=video.id %}">Generate Summary</a>
+
+
+    </div> {% endfor %}
+
+</div>
